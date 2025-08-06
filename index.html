@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universo do Homem-Aranha</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/site-logo.png" type="image/png" />
+
+    <!-- Bootstrap e Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #000;
+            padding: 10px 0;
+            color: white;
+        }
+
+        header img {
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        .imagem {
+            width: 10%;
+            height: 10%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #inicio {
+            background-image: url(img/spider-fundo.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        #inicio img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .botao-inicio {
+            transition: background-color 0.3s;
+        }
+
+        #galeria {
+            padding: 10px 10px;
+            text-align: center;
+        }
+
+        .img-fluid {
+            transition: transform 0.3s;
+        }
+
+        .img-fluid:hover {
+            transform: scale(3.05);
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #d90429;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="d-flex justify-content-between align-items-center">
+        <img src="img/spider-logo-tipo.jpeg" alt="Logo Homem-Aranha" />
+        <img src="img/spider-header.png" alt="Spider-man" class="imagem" />
+        <nav>
+            <ul>
+                <li><a class="nav-link" href="#inicio">Início</a></li>
+                <li><a class="nav-link" href="#galeria">Galeria</a></li>
+                <li><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO INICIAL -->
+    <section id="inicio">
+        <h1 class="display-5 fw-bold">BEM-VINDO AO UNIVERSO DO</h1>
+        <img src="img/spider-titulo.png" id="logo-titulo" alt="Homem-Aranha" />
+        <p class="mt-4 fs-5">
+            Este site apresenta quem é o Homem-Aranha e mostra duas de suas lutas mais marcantes.
+        </p>
+        <a href="#galeria" class="btn btn-light btn-lg fw-semibold mt-3 botao-inicio">Explorar agora</a>
+    </section>
+
+    <section id="sobre" class="my-5 pt-5">
+        <div class="container d-flex align-items-center">
+            <div class="col-12 col-md-6 offset-md-3">
+                <h2>Quem é o Homem-Aranha?</h2>
+                <p class="p-2">O Homem-Aranha, também conhecido como Peter Parker, é um dos super-heróis mais icônicos
+                    da Marvel. Criado por Stan Lee e Steve Ditko em 1962, Peter era um estudante comum que ganhou
+                    poderes após ser picado por uma aranha radioativa. Ele luta contra o crime em Nova York,
+                    equilibrando sua vida pessoal com suas responsabilidades como herói.</p>
+                <!-- SEÇÃO GALERIA -->
+                <section id="galeria">
+                    <h2 class="text-center mb-4" style="font-family: 'Arial Black'; color: #900;">GALERIA</h2>
+                    <div class="container p-3 bg-light rounded-4 shadow">
+                        <div class="row justify-content-md-center">
+                            <!-- Luta com Dr. Octopus -->
+                            <div class="col-md-5 mb-4">
+                                <a href="https://www.youtube.com/watch?v=rqOC0dTnYLU" target="_blank">
+                                    <img src="img/em-ação1.jpg" class="img-fluid rounded-5 shadow" loading="lazy"
+                                        alt="Homem-Aranha vs Dr. Octopus" />
+                                </a>
+                                <p class="text-center mt-2 fw-semibold">Homem-Aranha vs Dr. Octopus</p>
+                            </div>
+
+                            <!-- Luta com Lagarto -->
+                            <div class="col-md-5 mb-4">
+                                <a href="https://www.youtube.com/watch?v=RiEKUyYZXuA" target="_blank">
+                                    <img src="img/em-ação2.jpg" class="img-fluid rounded-5 shadow" loading="lazy"
+                                        alt="Homem-Aranha vs Lagarto" />
+                                </a>
+                                <p class="text-center mt-2 fw-semibold">Homem-Aranha vs Lagarto</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCRIPTS -->
+                <script>
+                    // Título animado no navegador
+                    let tituloOriginal = document.title;
+                    setInterval(() => {
+                        document.title = document.title === "🕸️ Homem-Aranha te chama!" ? tituloOriginal : "🕸️ Homem-Aranha te chama!";
+                    }, 2000);
+
+                    // Scroll suave para navegação
+                    document.querySelectorAll('a.nav-link').forEach(link => {
+                        link.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            let target = document.querySelector(this.getAttribute('href'));
+                            if (target) target.scrollIntoView({ behavior: 'smooth' });
+                        });
+                    });
+
+                    // Animação com Framer Motion no logo do título
+                    window.addEventListener('DOMContentLoaded', () => {
+                        const logo = document.getElementById('logo-titulo');
+                        if (logo && window.motion) {
+                            motion.animate(logo, {
+                                scale: [0.5, 1],
+                                rotate: [0, 360]
+                            }, {
+                                duration: 1,
+                                easing: 'ease-in-out'
+                            });
+                        }
+                    });
+
+                    // Efeito "teia" no botão
+                    const botao = document.querySelector('.botao-inicio');
+                    botao.addEventListener('mouseenter', () => {
+                        botao.innerText = 'Lançar Teia 🕸️';
+                    });
+                    botao.addEventListener('mouseleave', () => {
+                        botao.innerText = 'Explorar agora';
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    <footer id="contato">
+        <p class="mb-2">Minhas redes sociais:</p>
+        <a href="https://www.instagram.com/belis4rio_/" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-instagram fs-4"></i>
+            <span class="visually-hidden">Instagram</span>
+        </a>
+        <a href="https://github.com/belisario10" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github fs-4"></i>
+            <span class="visually-hidden">GitHub</span>
+        </a>
+        <p class="mt-3">Site criado por Guilherme Belisario | Projeto fictício sem fins comerciais - &copy;
+            2025</p>
+    </footer>
+</body>
+
+</html>

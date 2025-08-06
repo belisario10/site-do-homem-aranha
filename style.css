@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+:root {
+    --vermelho-aracnideo: #D32F2F;
+    --azul-aracnideo: #1976D2;
+    --preto-escuro: #1C1C1C;
+    --cinza-claro: #F4F4F4;
+    --teia-branco: #e0e0e0;
+}
+
+body {
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cinza-claro);
+    color: var(--preto-escuro);
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+/* Removendo limitação de largura */
+.container {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--preto-escuro);
+    width: 100%;
+}
+
+.nav-link {
+    color: var(--vermelho-aracnideo);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--azul-aracnideo);
+    text-decoration: underline;
+}
+
+section {
+    padding-bottom: 6rem;
+    width: 100%;
+}
+
+.inicio-fundo {
+    background-image: url('img/spiderman-city-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    width: 100%;
+    height: 606px;
+    padding: 40px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.esquerda-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.botao-inicio {
+    background-color: var(--vermelho-aracnideo);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    width: 14em;
+    height: 3em;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.botao-inicio:hover {
+    background-color: var(--azul-aracnideo);
+    color: white;
+    transform: scale(1.05);
+}
+
+.botao-inicio::after {
+    content: "🕸️";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: right 0.4s ease, opacity 0.4s ease;
+}
+
+.botao-inicio:hover::after {
+    right: 15px;
+    opacity: 1;
+}
+
+.display-4 {
+    text-shadow: -3px 3px var(--vermelho-aracnideo);
+    font-family: 'Bangers', cursive;
+    font-size: 3.5rem;
+    color: white;
+    animation: pulseTitle 2s infinite;
+}
+
+@keyframes pulseTitle {
+    0% { text-shadow: 0 0 10px var(--vermelho-aracnideo); }
+    50% { text-shadow: 0 0 20px var(--vermelho-aracnideo); }
+    100% { text-shadow: 0 0 10px var(--vermelho-aracnideo); }
+}
+
+h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 3em;
+    color: var(--vermelho-aracnideo);
+    text-shadow: 2px 2px var(--teia-branco);
+}
+
+/* SOBRE */
+#sobre {
+    background: url('img/spidey-icon-left.png') bottom left no-repeat,
+                url('img/spidey-icon-right.png') top right no-repeat;
+    background-size: 120px 120px;
+    padding: 10rem 5%;
+    margin: 5rem 0;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    width: 100%;
+}
+
+#sobre .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* GALERIA */
+#galeria {
+    background-color: white;
+    padding: 8rem 5%;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    width: 100%;
+}
+
+.fundo-galeria {
+    background: url('img/spiderweb-bg.png') bottom right no-repeat;
+    background-size: 180px 180px;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Imagens */
+.img-fluid {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* RODAPÉ */
+#contato {
+    background-image: url('img/spiderman-contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 5%;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 2;
+    width: 100%;
+}
+
+footer i {
+    font-size: 2.2rem;
+    margin: 0 15px;
+    color: var(--vermelho-aracnideo);
+    transition: transform 0.3s ease;
+}
+
+footer i:hover {
+    transform: scale(1.3);
+    color: var(--azul-aracnideo);
+}
+
+.formulario {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.formulario button {
+    background-color: var(--vermelho-aracnideo);
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: var(--azul-aracnideo);
+}
+
+.form-control {
+    background-color: var(--cinza-claro);
+    border: 1px solid #ccc;
+}
